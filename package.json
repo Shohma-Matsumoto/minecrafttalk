@@ -1,0 +1,29 @@
+{
+  "name": "minecrafttalk",
+  "version": "1.0.0",
+  "description": "Minecraftのチャットに日本語で指示を打つだけでコマンドが実行される",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "dev": "tsx watch src/index.ts"
+  },
+  "keywords": [
+    "minecraft",
+    "bedrock",
+    "websocket",
+    "ollama"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.78.0",
+    "dotenv": "^17.3.1",
+    "mcwss": "^2.1.3",
+    "openai": "^6.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
