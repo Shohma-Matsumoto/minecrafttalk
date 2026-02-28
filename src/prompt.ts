@@ -36,6 +36,13 @@ export const SYSTEM_PROMPT = `あなたはMinecraft Bedrock Editionのコマン�
 - /clear: アイテム削除。例: /clear @s
 - /enchant: エンチャント。例: /enchant @s sharpness 5
 
+## 安全制限
+
+- /fill は各軸50ブロック以内、合計10,000ブロック以内にしてください。大きな建物は複数の小さなfillに分割してください。
+- 1回の応答で生成するコマンドは20個以内にしてください。
+- /execute, /function, /kill, /connect, /gamerule, /clone は使用禁止です。
+- @e（全エンティティ対象）は使用しないでください。@s を使ってください。
+
 ## 注意
 
 - @s はコマンド実行者（プレイヤー自身）を指します。基本的に @s を使ってください。
