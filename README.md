@@ -28,7 +28,7 @@ Minecraft Bedrock Edition + LLM (Ollama / OpenAI / Gemini / Claude) + Node.js We
 | ソフトウェア | 用途 |
 |---|---|
 | Minecraft Bedrock Edition | Windows 10/11 の Microsoft Store 版 |
-| Node.js 20 以上 | サーバー実行環境 |
+| Node.js 22.23.4 以上（22 LTS） | サーバー実行環境（Node.js 20 以前はサポート終了） |
 | Ollama | ローカル LLM（無料、APIキー不要） |
 | Git | リポジトリのクローン |
 
@@ -181,6 +181,8 @@ npm start
 | 変数 | デフォルト | 説明 |
 |---|---|---|
 | `PORT` | `3000` | WebSocket サーバーのポート |
+| `ALLOWED_PLAYERS` | — | 指示を受け付けるプレイヤー名（カンマ区切り）。未設定なら接続中の全プレイヤーが対象。複数人で遊ぶワールドでは自分の名前を指定してください |
+| `ALLOW_REMOTE_CLIENTS` | `false` | `true` にすると PC 外（LAN 等）からの WebSocket 接続も受け付けます。認証がないため通常は変更しないでください |
 | `LLM_PROVIDER` | `ollama` | LLM プロバイダー (`ollama` / `openai` / `gemini` / `claude`) |
 | `LLM_API_KEY` | — | API キー（ollama 以外で必要） |
 | `LLM_MODEL` | プロバイダー依存 | 使用するモデル名 |
@@ -264,6 +266,7 @@ LLM が生成できるコマンドは安全のため以下に制限されてい�
 | `/enchant` | エンチャント | `/enchant @s sharpness 5` |
 
 `/kick`、`/ban`、`/op` などの管理系コマンドはブロックされます。
+また、影響対象は自分自身（`@s`）のみです。`@a` / `@e` などのセレクタや他プレイヤー名を対象にしたコマンド、改行を含むコマンドは実行前に拒否されます。
 
 ---
 
